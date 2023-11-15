@@ -18,11 +18,12 @@ export default function Image() {
     ];
 
     function changeImage(num, imageObjectArray) {
+        console.log(imageObjectArray.length);
         if (num === '0') {
             if (showImg > 0) {setShowImg(showImg - 1);}
         }
         else {
-            if (showImg < imageObjectArray.length) {setShowImg(showImg + 1);}
+            if (showImg < imageObjectArray.length - 1) {setShowImg(showImg + 1);}
         }
     }
         
