@@ -18,7 +18,6 @@ export default function Image() {
     ];
 
     function changeImage(num, imageObjectArray) {
-        console.log(imageObjectArray.length);
         if (num === '0') {
             if (showImg > 0) {setShowImg(showImg - 1);}
         }
@@ -55,6 +54,9 @@ export default function Image() {
                         {rightArrow}
                     </button>
                 </div>
+            </div>
+            <div className='img-number-container'>
+                <h3>{showImg + 1} / {imageObjectArray.length}</h3>
             </div>
         </>
     )
