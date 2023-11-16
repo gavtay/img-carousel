@@ -9,7 +9,8 @@ const rightArrow = <FontAwesomeIcon id="right" icon={faArrowRight} style={{color
 
 export default function Image() {
     const [showImg, setShowImg] = useState(0);
-
+    let moveLeft = 0;
+    let moveRight = 1;
     let imageObjectArray = [
         { id: 0, url: './src/assets/picture0.jpg' },
         { id: 1, url: './src/assets/picture1.jpg' }, 
@@ -18,7 +19,7 @@ export default function Image() {
     ];
 
     function changeImage(num, imageObjectArray) {
-        if (num === '0') {
+        if (num === 0) {
             if (showImg > 0) {setShowImg(showImg - 1);}
         }
         else {
@@ -43,14 +44,14 @@ export default function Image() {
                     <button
                         className='switchImgBtn'
                         id='left-btn'
-                        onClick={()=>{changeImage('0', imageObjectArray)}}>
+                        onClick={()=>{changeImage(moveLeft, imageObjectArray)}}>
                         {leftArrow}
                     </button>
                         {renderImages(imageObjectArray)}                       
                     <button 
                         className='switchImgBtn' 
                         id='right-btn' 
-                        onClick={()=>{changeImage('1', imageObjectArray)}}>
+                        onClick={()=>{changeImage(moveRight, imageObjectArray)}}>
                         {rightArrow}
                     </button>
                 </div>
